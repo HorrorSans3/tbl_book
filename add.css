@@ -4,8 +4,22 @@
 table{
 	border: 2px solid #333333;
 	width: 100%;
-	height: 300px;
 }
+#addtbl{
+	width: 100%;
+	height: 300px;
+	font-size: 20px;
+
+}
+#submit{
+	font-size: 20px;
+	background-color: #e6ccff;
+	border-style: outset;
+}
+#submit:hover{
+	border-style: inset;
+}
+
 .thead{
 	background-color: #e6e6ff;
 	border: 1px solid black;
@@ -14,10 +28,18 @@ table{
 td{
 	text-align: center;
 	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 #new{
 	border: 1px solid black;
 	background-color: #cccccc;
+	color: #000;
+	font-size: 20px;
+}
+#new1{
+	border: 1px solid #660066;
+	background-color: #ffe6ff;
 	color: #000;
 	font-size: 20px;
 }
