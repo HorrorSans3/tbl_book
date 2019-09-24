@@ -79,7 +79,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 	<br/><br/>
 	
 	<form name="form1" method="post" action="edit.php">
-		<table border="0">
+		<table id="tbledit">
 			<tr> 
 				<td>Title</td>
 				<td><input type="text" name="bookTitle" value="<?php echo $bookTitle;?>"></td>

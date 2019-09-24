@@ -31,7 +31,7 @@ $result = $dbConn->query("SELECT * FROM tbl_book ORDER BY id DESC");
 		echo "<td>".$row['Author']."</td>";
 		echo "<td>".$row['Publisher']."</td>";
 		echo "<td>".$row['yearPublished']."</td>";	
-		echo "<td><a href=\"edit.php?id=$row[id]\">Edit</a> | <a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
+		echo "<td><a class=\"edits\" href=\"edit.php?id=$row[id]\">Edit</a> | <a class=\"edits\" href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
 	}
 	?>
 	</table>
