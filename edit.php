@@ -1,5 +1,5 @@
 <?php
-// including the database connection file
+
 include_once("config.php");
 
 if(isset($_POST['update']))
@@ -11,8 +11,7 @@ if(isset($_POST['update']))
 	$Author=$_POST['Author'];
 	$Publisher=$_POST['Publisher'];
 	$yearPublished=$_POST['yearPublished'];	
-	
-	// checking empty fields
+
 	if(empty($bookTitle) || empty($category) || empty($Author) || empty($Publisher) || empty($yearPublished)) {	
 			
 		if(empty($bookTitle)) {
@@ -34,7 +33,7 @@ if(isset($_POST['update']))
 			echo "<font color='red'>Year Published field is empty.</font><br/>";
 		}		
 	} else {	
-		//updating the table
+
 		$sql = "UPDATE tbl_book SET bookTitle=:bookTitle, category=:category, Author=:Author, Publisher=:Publisher, yearPublished=:yearPublished WHERE id=:id";
 		$query = $dbConn->prepare($sql);
 				
@@ -46,19 +45,16 @@ if(isset($_POST['update']))
 		$query->bindparam(':yearPublished', $yearPublished);
 		$query->execute();
 		
-		// Alternative to above bindparam and execute
-		// $query->execute(array(':id' => $id, ':name' => $name, ':email' => $email, ':age' => $age));
-				
-		//redirectig to the display page. In our case, it is index.php
+
 		header("Location: index.php");
 	}
 }
 ?>
 <?php
-//getting id from url
+
 $id = $_GET['id'];
 
-//selecting data associated with this particular id
+
 $sql = "SELECT * FROM tbl_book WHERE id=:id";
 $query = $dbConn->prepare($sql);
 $query->execute(array(':id' => $id));
@@ -84,23 +80,23 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 	<form name="form1" method="post" action="edit.php">
 		<table border="0">
 			<tr> 
-				<td>Name</td>
+				<td>Title</td>
 				<td><input type="text" name="bookTitle" value="<?php echo $bookTitle;?>"></td>
 			</tr>
 			<tr> 
-				<td>Age</td>
+				<td>Category</td>
 				<td><input type="text" name="category" value="<?php echo $category;?>"></td>
 			</tr>
 			<tr> 
-				<td>Email</td>
+				<td>Author</td>
 				<td><input type="text" name="Author" value="<?php echo $Author;?>"></td>
 			</tr>
 			<tr> 
-				<td>Age</td>
+				<td>Publisher</td>
 				<td><input type="text" name="Publisher" value="<?php echo $Publisher;?>"></td>
 			</tr>
 			<tr> 
-				<td>Email</td>
+				<td>Year Published</td>
 				<td><input type="text" name="yearPublished" value="<?php echo $yearPublished;?>"></td>
 			</tr>
 			<tr>

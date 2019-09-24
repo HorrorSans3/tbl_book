@@ -1,28 +1,27 @@
 <?php
-//including the database connection file
 include_once("config.php");
 
-//fetching data in descending order (lastest entry first)
 $result = $dbConn->query("SELECT * FROM tbl_book ORDER BY id DESC");
 ?>
 
 <html>
 <head>	
 	<title>Homepage</title>
+	<link rel="stylesheet" type="text/css" href="add.css">
 </head>
 
 <body>
-<a href="add.html">Add New Data</a><br/><br/>
+<a href="add.html" id="new">Add New Data</a><br/><br/>
 
-	<table width='80%' border=0>
+	<table>
 
-	<tr bgcolor='#CCCCCC'>
-		<td>Title</td>
-		<td>Category</td>
-		<td>Author</td>
-		<td>Publisher</td>
-		<td>Year Published</td>
-		<td>Update</td>
+	<tr>
+		<td class="thead">Title</td>
+		<td class="thead">Category</td>
+		<td class="thead">Author</td>
+		<td class="thead">Publisher</td>
+		<td class="thead">Year Published</td>
+		<td class="thead">Update</td>
 	</tr>
 	<?php 	
 	while($row = $result->fetch(PDO::FETCH_ASSOC)) { 		

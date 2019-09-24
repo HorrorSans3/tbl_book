@@ -5,7 +5,7 @@
 
 <body>
 <?php
-//including the database connection file
+
 include_once("config.php");
 
 if(isset($_POST['Submit'])) {	
@@ -15,7 +15,7 @@ if(isset($_POST['Submit'])) {
 	$Publisher = $_POST['Publisher'];
 	$yearPublished = $_POST['yearPublished'];
 		
-	// checking empty fields
+
 	if(empty($bookTitle) || empty($category) || empty($Author) || empty($Publisher) || empty($yearPublished)) {
 				
 		if(empty($bookTitle)) {
@@ -36,13 +36,10 @@ if(isset($_POST['Submit'])) {
 		if(empty($yearPublished)) {
 			echo "<font color='red'>Age field is empty.</font><br/>";
 		}
-		
-		//link to the previous page
+
 		echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
 	} else { 
-		// if all the fields are filled (not empty) 
-			
-		//insert data to database		
+
 		$sql = "INSERT INTO tbl_book(bookTitle, category, Author, Publisher, yearPublished) VALUES(:bookTitle, :category, :Author, :Publisher, :yearPublished)";
 		$query = $dbConn->prepare($sql);
 				
@@ -53,10 +50,6 @@ if(isset($_POST['Submit'])) {
 		$query->bindparam(':yearPublished', $yearPublished);
 		$query->execute();
 		
-		// Alternative to above bindparam and execute
-		// $query->execute(array(':name' => $name, ':email' => $email, ':age' => $age));
-		
-		//display success message
 		echo "<font color='green'>Data added successfully.";
 		echo "<br/><a href='index.php'>View Result</a>";
 	}
