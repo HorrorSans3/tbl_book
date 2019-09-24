@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>Add Data</title>
+	<link rel="stylesheet" type="text/css" href="add.css">
 </head>
 
 <body>
@@ -50,8 +51,8 @@ if(isset($_POST['Submit'])) {
 		$query->bindparam(':yearPublished', $yearPublished);
 		$query->execute();
 		
-		echo "<font color='green'>Data added successfully.";
-		echo "<br/><a href='index.php'>View Result</a>";
+		echo "<center><font color='green'><h3 id='succ'>Data added successfully.</h3>";
+		echo "<br/><a href='index.php' id='view'>View Result</a></center>";
 	}
 }
 ?>

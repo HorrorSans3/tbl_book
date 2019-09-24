@@ -71,6 +71,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 <html>
 <head>	
 	<title>Edit Data</title>
+	<link rel="stylesheet" type="text/css" href="add.css">
 </head>
 
 <body>
