@@ -22,6 +22,7 @@ $result = $dbConn->query("SELECT * FROM tbl_book ORDER BY id DESC");
 		<td class="thead">Author</td>
 		<td class="thead">Publisher</td>
 		<td class="thead">Year Published</td>
+		<td class="thead">Date Added</td>
 		<td class="thead">Update</td>
 	</tr>
 	<?php 	
@@ -32,6 +33,7 @@ $result = $dbConn->query("SELECT * FROM tbl_book ORDER BY id DESC");
 		echo "<td>".$row['Author']."</td>";
 		echo "<td>".$row['Publisher']."</td>";
 		echo "<td>".$row['yearPublished']."</td>";	
+		echo "<td>".$row['Date Added']."</td>";	
 		echo "<td><a class=\"edits\" href=\"edit.php?id=$row[id]\">Edit</a> | <a class=\"edits\" href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
 	}
 	?>
