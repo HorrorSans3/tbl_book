@@ -1,7 +1,7 @@
 <?php
 
 $databaseHost = 'localhost';
-$databaseName = 'aics';
+$databaseName = 'churchillonly';
 $databaseUsername = 'root';
 $databasePassword = '';
 

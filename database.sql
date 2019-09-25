@@ -1,6 +1,6 @@
-create database aics;
+create database churchillonly;
 
-use aics;
+use churchillonly;
 
 CREATE TABLE `tbl_book` (
   `id` int(11) NOT NULL auto_increment,
