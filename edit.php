@@ -12,6 +12,7 @@ if(isset($_POST['update']))
 	$Publisher=$_POST['Publisher'];
 	$yearPublished=$_POST['yearPublished'];	
 
+
 	if(empty($bookTitle) || empty($category) || empty($Author) || empty($Publisher) || empty($yearPublished)) {	
 			
 		if(empty($bookTitle)) {
@@ -32,7 +33,9 @@ if(isset($_POST['update']))
 		if(empty($yearPublished)) {
 			echo "<font color='red'>Year Published field is empty.</font><br/>";
 		}		
-	} else {	
+
+	} 
+	else {	
 
 		$sql = "UPDATE tbl_book SET bookTitle=:bookTitle, category=:category, Author=:Author, Publisher=:Publisher, yearPublished=:yearPublished WHERE id=:id";
 		$query = $dbConn->prepare($sql);
@@ -68,10 +71,12 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 	$yearPublished = $row['yearPublished'];
 }
 ?>
+
 <html>
 <head>	
 	<title>Edit Data</title>
-	<link rel="stylesheet" type="text/css" href="add.css">
+	<link rel="stylesheet" type="text/css" href="a.css">
+
 </head>
 
 <body>
@@ -102,7 +107,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-				<td><input type="submit" name="update" value="Update"></td>
+				<td><input type="submit" name="update" value="Update" class="submit"></td>
 			</tr>
 		</table>
 	</form>

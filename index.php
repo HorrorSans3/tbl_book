@@ -7,10 +7,11 @@ $result = $dbConn->query("SELECT * FROM tbl_book ORDER BY id DESC");
 <html>
 <head>	
 	<title>Homepage</title>
-	<link rel="stylesheet" type="text/css" href="add.css">
+	<link rel="stylesheet" type="text/css" href="a.css">
+
 </head>
 
-<body>
+<body class="body">
 <a href="add.html" id="new">Add New Data</a><br/><br/>
 
 	<table>

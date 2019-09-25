@@ -1,5 +1,5 @@
 *{
-	background-color: #ffb3ff;
+	background-color: #ffccff;
 }
 table{
 	border: 2px solid #333333;
@@ -19,12 +19,12 @@ table{
 .edits{
 	background-color: white;
 }
-#submit{
+.submit{
 	font-size: 20px;
 	background-color: #e6ccff;
 	border-style: outset;
 }
-#submit:hover{
+.submit:hover{
 	border-style: inset;
 }
 

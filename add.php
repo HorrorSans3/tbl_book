@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Add Data</title>
-	<link rel="stylesheet" type="text/css" href="add.css">
 </head>
 
 <body>
